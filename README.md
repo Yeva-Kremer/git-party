@@ -11,3 +11,9 @@
 ### Illustrations
 
 <https://pixels.market/illustrations/doodledo?c=technology>
+
+## Team
+
+- Eva Kremer
+- Natalia Rocha Iraizos
+- Hieu Truong
