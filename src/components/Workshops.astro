@@ -1,0 +1,26 @@
+---
+/* check WorkshopCard.astro to get an idea of how to use these themes */
+const themes = ["grey", "green", "black"];
+---
+
+<section class="container" id="workshops">
+  <header>
+    <h2><span>Workshops</span></h2>
+    <p>
+      These workshops offer hands-on introductions to creative technologies,
+      empowering artists, designers, and musicians to explore digital tools as
+      expressive, interactive mediums.
+    </p>
+  </header>
+  <ul>
+    <li>##WORKSHOP##</li>
+  </ul>
+</section>
+
+<style>
+  ul {
+    display: flex;
+    flex-flow: column;
+    gap: var(--sp-m);
+  }
+</style>

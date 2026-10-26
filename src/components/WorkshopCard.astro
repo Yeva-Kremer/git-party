@@ -1,0 +1,91 @@
+---
+import ArrowLink from "./ArrowLink.astro";
+
+const { theme = "grey" } = Astro.props;
+---
+
+<article class={`workshop-card workshop-card--${theme}`}>
+  <div>
+   <h3><span>{##TITLE##}</span></h3>
+    <ArrowLink
+      class="link"
+      href={`/workshops/${##ID##}`}
+      title="Learn more"
+    />
+    <img
+     class="image" src={##IMAGE##} alt=""
+    />
+  </div>
+</article>
+
+<style>
+  article {
+    --arrow-color-front: var(--color-primary);
+    --arrow-color-black: var(--color-text);
+    --arrow-color-text: var(--color-text);
+    background-color: var(--color-grey);
+
+    border: solid 2px var(--color-text);
+    border-bottom-width: 8px;
+    border-radius: var(--br-l);
+
+    padding: var(--sp-xl);
+  }
+
+  div {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "title"
+      "img"
+      "link";
+    gap: var(--sp-xs);
+  }
+
+  h3 {
+    grid-area: title;
+    justify-self: start;
+    align-self: start;
+    text-align: left;
+  }
+
+  .link {
+    grid-area: link;
+  }
+
+  .image {
+    grid-area: img;
+    align-self: center;
+    justify-self: end;
+    height: 15rem;
+    width: auto;
+    aspect-ratio: 1;
+  }
+
+  @media (min-width: 30rem) {
+    div {
+      grid-template-areas:
+        "title img"
+        "link img";
+    }
+  }
+
+  .workshop-card--green {
+    background-color: var(--color-primary);
+  }
+
+  .workshop-card--green h3 span {
+    background-color: var(--color-white);
+  }
+
+  .workshop-card--black {
+    --arrow-color-front: var(--color-text);
+    --arrow-color-black: var(--color-white);
+    --arrow-color-text: var(--color-white);
+    background-color: var(--color-black);
+  }
+
+  .workshop-card--black h3 span {
+    background-color: white;
+  }
+</style>

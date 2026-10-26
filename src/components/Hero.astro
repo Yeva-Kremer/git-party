@@ -1,0 +1,73 @@
+---
+import ai from "../assets/ai.svg";
+---
+
+<section class="container">
+  <h2>
+    Creative<br />
+    Coding<br />
+    Kortrijk
+  </h2>
+  <img class="img" src={ai.src} alt="an abstract image of brains and code" />
+  <p>
+    Welcome to Creative Coding Kortrijk (CCK), a dynamic community where
+    technology and creativity come together. Here, we explore and push the
+    boundaries of art and code, fostering innovation and collaboration.
+  </p>
+
+  <a class="button" href="#workshops">Explore</a>
+</section>
+
+<style>
+  section {
+    display: grid;
+    gap: var(--sp-l);
+    margin-bottom: var(--sp-3xl);
+  }
+
+  h2 {
+    background-color: unset;
+    padding: unset;
+    margin: unset;
+    font-size: var(--fs-5);
+    font-weight: 500;
+    line-height: 1.3;
+
+    grid-row: 1;
+    grid-column: 1;
+    place-self: center;
+  }
+
+  img {
+    z-index: -1;
+    width: 60vw;
+    grid-row: 1;
+    grid-column: 1;
+    place-self: center;
+  }
+
+  p {
+    margin-bottom: unset;
+  }
+
+  @media screen and (min-width: 750px) {
+    section {
+      grid-template-columns: 1fr 1fr;
+      text-align: left;
+      justify-items: start;
+      align-items: center;
+    }
+
+    img {
+      grid-column: 2;
+      grid-row: 1 / span 3;
+      width: 80%;
+      justify-self: end;
+    }
+
+    h2 {
+      text-align: left;
+      justify-self: start;
+    }
+  }
+</style>

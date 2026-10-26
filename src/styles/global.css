@@ -1,0 +1,196 @@
+:root {
+  --color-primary: #B9FF66;
+  --color-black: #191A23;
+  --color-grey: #F3F3F3;
+  --color-white: #ffffff;
+
+  --color-text: var(--color-black);
+  --color-background: var(--color-white);
+
+  --fs--2: clamp(0.6944rem, 0.6856rem + 0.0444vw, 0.72rem);
+  --fs--1: clamp(0.8333rem, 0.8101rem + 0.1159vw, 0.9rem);
+  --fs-0: clamp(1rem, 0.9565rem + 0.2174vw, 1.125rem);
+  --fs-1: clamp(1.2rem, 1.1283rem + 0.3587vw, 1.4063rem);
+  --fs-2: clamp(1.44rem, 1.3295rem + 0.5527vw, 1.7578rem);
+  --fs-3: clamp(1.728rem, 1.5648rem + 0.8161vw, 2.1973rem);
+  --fs-4: clamp(2.0736rem, 1.8395rem + 1.1704vw, 2.7466rem);
+  --fs-5: clamp(2.4883rem, 2.1597rem + 1.6433vw, 3.4332rem);
+
+  --sp-3xs: clamp(0.25rem, 0.2283rem + 0.1087vw, 0.3125rem);
+  --sp-2xs: clamp(0.5rem, 0.4783rem + 0.1087vw, 0.5625rem);
+  --sp-xs: clamp(0.75rem, 0.7065rem + 0.2174vw, 0.875rem);
+  --sp-s: clamp(1rem, 0.9565rem + 0.2174vw, 1.125rem);
+  --sp-m: clamp(1.5rem, 1.4348rem + 0.3261vw, 1.6875rem);
+  --sp-l: clamp(2rem, 1.913rem + 0.4348vw, 2.25rem);
+  --sp-xl: clamp(3rem, 2.8696rem + 0.6522vw, 3.375rem);
+  --sp-2xl: clamp(4rem, 3.8261rem + 0.8696vw, 4.5rem);
+  --sp-3xl: clamp(6rem, 5.7391rem + 1.3043vw, 6.75rem);
+
+  /* One-up pairs */
+  --sp-3xs-2xs: clamp(0.25rem, 0.1413rem + 0.5435vw, 0.5625rem);
+  --sp-2xs-xs: clamp(0.5rem, 0.3696rem + 0.6522vw, 0.875rem);
+  --sp-xs-s: clamp(0.75rem, 0.6196rem + 0.6522vw, 1.125rem);
+  --sp-s-m: clamp(1rem, 0.7609rem + 1.1957vw, 1.6875rem);
+  --sp-m-l: clamp(1.5rem, 1.2391rem + 1.3043vw, 2.25rem);
+  --sp-l-xl: clamp(2rem, 1.5217rem + 2.3913vw, 3.375rem);
+  --sp-xl-2xl: clamp(3rem, 2.4783rem + 2.6087vw, 4.5rem);
+  --sp-2xl-3xl: clamp(4rem, 3.0435rem + 4.7826vw, 6.75rem);
+
+  /* Custom pairs */
+  --sp-s-l: clamp(1rem, 0.5652rem + 2.1739vw, 2.25rem);
+
+  --br-s: 0.5rem;
+  --br-l: 3rem;
+
+  --max-width-page: 75rem;
+}
+
+
+
+html {
+  box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+img {
+  max-inline-size: 100%;
+  block-size: auto;
+  display: block;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+
+body {
+  font-family: "Space Grotesk Variable", sans-serif;
+  font-size: var(--fs-0);
+  line-height: 1.4;
+  color: var(--color-black);
+  accent-color: var(--color-primary);
+  background-color: var(--color-background);
+}
+
+:focus {
+  outline-color: var(--color-primary);
+  outline-width: 2px;
+}
+
+h1, h2, h3 {
+  display: inline-block;
+  margin-bottom: .6em;
+  text-wrap: balance;
+}
+
+:is(h1,h2, h3) span {
+  padding: var(--sp-3xs) var(--sp-xs);
+  background: var(--color-primary);
+
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  border-radius: .3em;
+}
+
+
+h1 {
+  font-size: var(--fs-5);
+  font-weight: 500;
+}
+
+h2 {
+  font-size: var(--fs-4);
+}
+
+h3 {
+  font-size: var(--fs-3);
+}
+
+p {
+  max-width: 70ch;
+  margin-bottom: var(--sp-m);
+}
+
+
+.button {
+  display: inline-block;
+  background-color: var(--color-black);
+  color: var(--color-white);
+  font-size: var(--fs-1);
+  border-radius: var(--br-s);
+  padding: var(--sp-xs) var(--sp-s);
+  text-decoration: none;
+}
+
+.button:hover {
+  color: var(--color-primary);
+}
+
+.button--primary{
+  background-color: var(--color-primary);
+}
+
+.button--trans{
+  background-color: transparent;
+  color: var(--color-text);
+}
+
+a:not([class]):any-link{
+  color: var(--color-text);
+}
+a:not([class]):hover {
+  text-decoration-color: var(--color-primary);
+  text-decoration-thickness: .3em;
+  text-decoration-skip-ink: none;
+}
+
+
+.container {
+  padding: 0 var(--sp-s);
+  max-width: var(--max-width-page);
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+  margin-bottom: var(--sp-3xl);
+  text-align: center;
+}
+
+.container[id]{
+  padding-top: var(--sp-l);
+  margin-top: calc(var(--sp-l) * -1); /*anchor link adjustment*/
+}
+
+.container header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: var(--sp-m);
+}
+
+
+@media screen and (min-width: 45em) {
+
+  .container {
+    padding: 0 var(--sp-l);
+    text-align: left;
+  }
+
+  .container header {
+    flex-flow: row;
+    justify-content: start;
+    align-items: center;
+    gap: var(--sp-s);
+  }
+}

@@ -1,0 +1,71 @@
+<form action="http://youtu.be/oHg5SJYRHA0">
+  <input type="text" pattern="1" placeholder="0" required size="1" />
+  <input type="text" pattern="2" placeholder="0" required size="1" />
+  <input type="text" pattern="3" placeholder="0" required size="1" />
+  <input type="text" pattern="4" placeholder="0" required size="1" />
+  <button type="submit">git out</button>
+</form>
+
+<style>
+  :root {
+    --error: #ff0000;
+    --primary: #000000;
+    --primary-light: #c9c9c9;
+  }
+
+  ::selection {
+    background-color: var(--primary);
+    color: white;
+  }
+
+  input {
+    background: none;
+    border: none;
+    font-size: inherit;
+    font-family: inherit;
+    border-bottom: dashed 1px var(--primary);
+    text-align: center;
+  }
+
+  input:focus {
+    outline-color: var(--primary);
+  }
+
+  input::placeholder {
+    color: var(--error);
+  }
+
+  form {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: center;
+    gap: 0.5em;
+    font-size: 3rem;
+    border: solid 2px var(--primary);
+    padding: 1rem;
+    background-color: var(--primary-light);
+  }
+
+  button {
+    grid-column: 1 / -1;
+    background: var(--primary);
+    border: none;
+    color: white;
+    font-family: inherit;
+    font-size: inherit;
+  }
+
+  button:focus {
+    outline: solid 1px var(--primary);
+  }
+
+  input:invalid {
+    color: var(--error);
+    border-color: var(--error);
+  }
+
+  form:has(:invalid) button {
+    opacity: 0.1;
+    background-color: #ff0000;
+  }
+</style>

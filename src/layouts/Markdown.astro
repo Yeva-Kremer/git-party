@@ -1,0 +1,36 @@
+---
+import Footer from "../components/Footer.astro";
+import Base from "./Base.astro";
+---
+
+<Base>
+  <div class="cols container">
+    <slot name="top" class="top" />
+    <div class="md">
+      <slot />
+    </div>
+    <slot name="sidebar" class="extra" />
+  </div>
+</Base>
+
+<style>
+  .cols {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: var(--sp-m);
+    align-items: start;
+  }
+
+  .top {
+    grid-row: 1;
+    grid-column: span 2;
+  }
+
+  .md {
+    grid-column: 1;
+  }
+
+  .extra {
+    grid-column: 2;
+  }
+</style>

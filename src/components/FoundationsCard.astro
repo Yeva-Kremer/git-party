@@ -1,0 +1,66 @@
+---
+---
+
+<details>
+  <summary>{##TITLE##}</summary>
+  <p>{##DESCRIPTION##}</p>
+  <a href={`/foundations/${##ID##}`}>
+    Find out how we put this in practice
+  </a>
+</details>
+
+<style>
+  details {
+    background-color: var(--color-grey);
+    padding: var(--sp-l);
+    border-radius: var(--br-l);
+
+    border: solid 2px var(--color-text);
+    border-bottom-width: 8px;
+
+    text-align: left;
+
+    margin-bottom: var(--sp-m);
+  }
+
+  summary {
+    display: flex;
+    align-items: center;
+    gap: var(--sp-m);
+    counter-increment: counter;
+    padding: var(--sp-l) 0;
+    margin: calc(var(--sp-l) * -1) 0;
+    cursor: pointer;
+  }
+
+  summary:hover {
+    text-decoration: underline;
+  }
+
+  summary::before {
+    content: counter(counter, decimal-leading-zero);
+    font-size: var(--fs-3);
+  }
+
+  summary::after {
+    content: "";
+    background-image: url(../assets/plus.svg);
+    width: 2rem;
+    height: 2rem;
+    margin-left: auto;
+  }
+
+  details[open] {
+    background-color: var(--color-primary);
+  }
+
+  details[open]summary {
+    border-bottom: solid 1px var(--color-black);
+    padding-bottom: var(--sp-s);
+    margin-bottom: var(--sp-s);
+  }
+
+  details[open]summary::after {
+    background-image: url(../assets/min.svg);
+  }
+</style>

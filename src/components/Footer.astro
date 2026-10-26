@@ -1,0 +1,133 @@
+<div class="container">
+  <footer>
+    <nav>
+      <span class="visually-hidden">CCK</span>
+      <a href="/"
+        ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 233 78">
+          <path
+            fill="currentColor"
+            d="M75 78 0 48.04V29.96L75 0v14.89L14.464 37.937v2.128L75 63.109V78ZM150 78 75 48.04V29.96L150 0v14.89L89.464 37.937v2.128L150 63.109V78ZM233 78l-60.536-24.181V78H158V0h14.464v24.181L233 0v14.89l-60.536 23.046v2.128L233 63.109V78Z"
+          ></path>
+        </svg>
+      </a>
+      <ul class="nav__list" id="nav__list">
+        <li class="nav__item">
+          <a class="nav__link" href="/about">About us</a>
+        </li>
+        <li class="nav__item"><a class="nav__link" href="/news">News</a></li>
+        <li class="nav__item">
+          <a class="nav__link" href="/#">Join us</a>
+        </li>
+      </ul>
+    </nav>
+    <article>
+      <h3 class="title"><span>Contact us</span></h3>
+      <address>
+        <dl>
+          <dt>Email</dt>
+          <dd>fake@creativecodingkortrijk.be</dd>
+          <dt>Phone</dt>
+          <dd>0032 (+)56 97 92 04</dd>
+          <dt>Address</dt>
+          <dd>
+            Budafabriek<br />
+            Dam 2<br />
+            8500 Kortrijk
+          </dd>
+        </dl>
+      </address>
+    </article>
+    <hr />
+    <p class="disclaimer">2025 no rights reserved, it's all fake after all</p>
+  </footer>
+</div>
+
+<style>
+  .container {
+    margin-bottom: 0;
+    text-align: left;
+  }
+
+  footer {
+    background-color: var(--color-black);
+    border-top-left-radius: var(--br-l);
+    border-top-right-radius: var(--br-l);
+
+    padding: var(--sp-xl);
+
+    color: var(--color-white);
+    padding-bottom: var(--sp-s);
+
+    margin-top: var(--sp-3xl);
+  }
+
+  svg {
+    color: var(--color-white);
+    width: 4em;
+    height: auto;
+  }
+
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: var(--sp-s);
+    margin-bottom: var(--sp-xl);
+  }
+
+  ul {
+    display: flex;
+  }
+
+  .title {
+    font-size: var(--fs-0);
+    color: var(--color-text);
+    margin-bottom: var(--sp-m);
+  }
+
+  .nav__list {
+    display: flex;
+    justify-content: space-evenly;
+    gap: var(--sp-s);
+    flex-flow: wrap;
+  }
+
+  .nav__link {
+    color: var(--color-white);
+  }
+
+  .disclaimer {
+    padding: var(--sp-s) 0;
+    margin-bottom: 0;
+    font-size: var(--fs--2);
+  }
+
+  dd {
+    margin-bottom: var(--sp-s);
+  }
+
+  @media screen and (min-width: 33em) {
+    dl {
+      display: grid;
+      gap: var(--sp-xs) var(--sp-l);
+      grid-template-columns: min-content auto;
+      margin-bottom: var(--sp-m);
+    }
+
+    dt {
+      grid-column: 1;
+    }
+
+    dd {
+      grid-column: 2;
+      margin-bottom: 0;
+    }
+  }
+
+  @media screen and (min-width: 45em) {
+    nav {
+      justify-content: space-between;
+    }
+  }
+</style>
