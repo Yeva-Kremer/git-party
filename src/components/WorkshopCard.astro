@@ -1,19 +1,19 @@
 ---
 import ArrowLink from "./ArrowLink.astro";
 
-const { theme = "grey" } = Astro.props;
+const { theme = "grey", id, title, image } = Astro.props;
 ---
 
 <article class={`workshop-card workshop-card--${theme}`}>
   <div>
-   <h3><span>{##TITLE##}</span></h3>
+   <h3><span>{title}</span></h3>
     <ArrowLink
       class="link"
-      href={`/workshops/${##ID##}`}
+      href={`/workshops/${id}`}
       title="Learn more"
     />
     <img
-     class="image" src={##IMAGE##} alt=""
+     class="image" src={image.src} alt=""
     />
   </div>
 </article>
