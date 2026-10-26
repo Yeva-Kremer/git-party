@@ -1,5 +1,13 @@
 ---
+import { getCollection, render } from "astro:content";
 import Base from "../layouts/Base.astro";
+
+const news = (await getCollection("news")).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+);
+const items = await Promise.all(
+  news.map(async (item) => ({ item, Content: (await render(item)).Content })),
+);
 ---
 
 <Base title="News">
@@ -7,17 +15,25 @@ import Base from "../layouts/Base.astro";
     <h2><span>News</span></h2>
     <p class="code">The third digit of the code is 3</p>
     <ul>
-      <li>
-        <article>
-          <h3>##TITLE##</h3>
-          <time datetime={##DATE##}>
-            {##DATE##}
-          </time>
-          <div class="md">
-            ##CONTENT##
-          </div>
-        </article>
-      </li>
+      {
+        items.map(({ item, Content }) => (
+          <li>
+            <article>
+              <h3>{item.data.title}</h3>
+              <time datetime={item.data.date.toISOString().slice(0, 10)}>
+                {item.data.date.toLocaleDateString("en-GB", {
+                  day: "numeric",
+                  month: "long",
+                  year: "numeric",
+                })}
+              </time>
+              <div class="md">
+                <Content />
+              </div>
+            </article>
+          </li>
+        ))
+      }
     </ul>
   </div>
 </Base>
