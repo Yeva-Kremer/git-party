@@ -1,5 +1,10 @@
 ---
+import type { CollectionEntry } from "astro:content";
 
+type Props = CollectionEntry<"team">;
+
+const { id, data } = Astro.props;
+const { name, function: role, bio, pic } = data;
 ---
 
 <article>
@@ -7,16 +12,16 @@
     <div class="profilepic">
       <img
         alt=""
-        src={##PIC##}
+        src={pic.src}
         width={300}
         height={300}
-        alt={`Profile pic of ${##NAME##}`}
+        alt={`Profile pic of ${name}`}
       />
     </div>
   </div>
-  <p class="name"><a href={`/team/${##ID##}`}>{##NAME##}</a></p>
-  <p class="function">{##FUNCTION##}</p>
-  <p class="bio">{##BIO##}</p>
+  <p class="name"><a href={`/team/${id}`}>{name}</a></p>
+  <p class="function">{role}</p>
+  <p class="bio">{bio}</p>
 </article>
 
 <style>
