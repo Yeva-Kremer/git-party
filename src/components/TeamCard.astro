@@ -1,27 +1,21 @@
 ---
-import type { CollectionEntry } from "astro:content";
-
-type Props = CollectionEntry<"team">;
-
-const { id, data } = Astro.props;
-const { name, function: role, bio, pic } = data;
+const { member } = Astro.props;
 ---
 
 <article>
   <div class="picwrap">
     <div class="profilepic">
       <img
-        alt=""
-        src={pic.src}
+        src={member.data.pic.src}
         width={300}
         height={300}
-        alt={`Profile pic of ${name}`}
+        alt={`Profile pic of ${member.data.name}`}
       />
     </div>
   </div>
-  <p class="name"><a href={`/team/${id}`}>{name}</a></p>
-  <p class="function">{role}</p>
-  <p class="bio">{bio}</p>
+  <p class="name"><a href={`/team/${member.id}`}>{member.data.name}</a></p>
+  <p class="function">{member.data.function}</p>
+  <p class="bio">{member.data.bio}</p>
 </article>
 
 <style>

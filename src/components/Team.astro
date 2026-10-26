@@ -36,7 +36,7 @@ const team = await getCollection("team");
     {
       team.map((member) => (
         <li>
-          <TeamCard {...member} />
+          <TeamCard member={member} />
         </li>
       ))
     }

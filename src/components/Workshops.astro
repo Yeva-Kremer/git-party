@@ -1,6 +1,10 @@
 ---
-/* check WorkshopCard.astro to get an idea of how to use these themes */
+import { getCollection } from "astro:content";
+import WorkshopCard from "./WorkshopCard.astro";
 const themes = ["grey", "green", "black"];
+
+const workshops = await getCollection("workshops");
+
 ---
 
 <section class="container" id="workshops">
@@ -13,7 +17,18 @@ const themes = ["grey", "green", "black"];
     </p>
   </header>
   <ul>
-    <li>##WORKSHOP##</li>
+    {
+      workshops.map((workshop, i) => (
+        <li>
+          <WorkshopCard
+            theme={themes[i % themes.length]}
+            id={workshop.id}
+            title={workshop.data.title}
+            image={workshop.data.image}
+          />
+        </li>
+      ))
+    }
   </ul>
 </section>
 
