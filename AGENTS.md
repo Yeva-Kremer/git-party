@@ -2,10 +2,10 @@
 
 ## Project
 
-- Website for **Creative Coding Kortrijk (CCK)**, a creative coding community in Kortrijk that brings together artists, designers, programmers and enthusiasts working at the intersection of art and code.
-- Audience: people interested in creative coding, from beginners to experienced developers, who want to discover the community, its workshops, foundations and team, and join in.
+- Website for **Creative Coding Kortrijk (CCK)**, a creative coding community in Kortrijk that brings together artists, designers, programmers and enthusiasts working at the intersection of art and code (generative art, interactive installations, digital fabrication, algorithmic music).
+- Audience: community members and newcomers interested in creative coding, from beginners to experienced developers, who want to discover the community, its workshops, foundations and team, and join in.
 - Built as a team assignment for the course WEB 3 (Devine, Howest) by Eva Kremer, Natalia Rocha Iraizos and Hieu Truong.
-- Content: a landing page (hero), foundations (the community's values), workshops, team members, an About page and a News page.
+- Content: a landing page (hero), foundations (the community's values: collaboration, experiment, fusion, learning), workshops (e.g. pen plotter, p5.js, Max/MSP), team members, an About page and a News page.
 - The site content (about text, team members, workshops) is fictional placeholder content; the About page ends with a "Fake" section saying so.
 - Design source: Figma file "CCK" (linked in `README.md`), adapted from the community "Positivus Landing Page" design. Illustrations come from pixels.market (Doodledo).
 - The repository is in a starter state: several components and pages contain `##PLACEHOLDER##` tokens that still need to be implemented (e.g. `src/pages/news.astro` uses `##TITLE##`, `##DATE##` and `##CONTENT##`).
@@ -16,7 +16,7 @@
 
 - Astro `^7.4.0`, ESM project (`"type": "module"`), `astro.config.mjs` uses the default config with no integrations.
 - TypeScript via `astro/tsconfigs/base`, with `strictNullChecks` and `allowJs` enabled.
-- Scripts: `npm run dev` (dev server with `--host`), `npm start`, `npm run build`, `npm run preview`.
+- Scripts: `npm run dev` (dev server with `--host`), `npm start`, `npm run build`, `npm run preview`, `npm run astro`.
 - Content collections are defined in `src/content.config.ts` using the `glob` loader and `astro/zod` schemas, with Markdown files in `src/content/`:
   - `workshops`: `title`, `image`. Currently 3 entries, numbered `01-` to `03-`.
   - `team`: `name`, `function`, `bio`, `pic`. Currently 3 entries.
@@ -32,7 +32,7 @@
 - No CSS framework. Styling is plain CSS:
   - global stylesheets imported in `Base.astro`
   - scoped `<style>` blocks in components
-  - CSS custom properties defined in `global.css` for colors (`--color-primary: #B9FF66`, `--color-black: #191A23`, ...), a fluid type scale (`--fs-*`) and a fluid spacing scale (`--sp-*`), built with `clamp()`
+  - CSS custom properties defined in `global.css` for colors (`--color-primary: #B9FF66`, `--color-black: #191A23`, ...), a fluid type scale (`--fs-*`) and a fluid spacing scale (`--sp-*`, e.g. `--sp-l`, `--sp-3xl`), built with `clamp()`
 - Font: Space Grotesk Variable, installed through `@fontsource-variable/space-grotesk`.
 - Markdown linting: `.markdownlint.json` disables MD041 (first line heading) and MD013 (line length).
 - The only runtime dependencies are `astro` and `@fontsource-variable/space-grotesk`. There is no UI framework and no test setup.
