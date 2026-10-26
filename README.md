@@ -16,4 +16,4 @@
 
 - Eva Kremer
 - Natalia Rocha Iraizos
-- Hieu Truong
+- Hieu Truong – team section and news page
