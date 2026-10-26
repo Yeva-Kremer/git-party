@@ -1,10 +1,10 @@
 ---
 import { getCollection } from "astro:content";
 import WorkshopCard from "./WorkshopCard.astro";
+const themes = ["grey", "green", "black"];
 
 const workshops = await getCollection("workshops");
-const themes = ["grey", "green", "black"];
-/* check WorkshopCard.astro to get an idea of how to use these themes */
+
 ---
 
 <section class="container" id="workshops">
