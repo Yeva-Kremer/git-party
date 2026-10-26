@@ -40,4 +40,4 @@ The dev server runs at <http://localhost:4321>.
 
 - Eva Kremer
 - Natalia Rocha Iraizos
-- Hieu Truong
+- Hieu Truong – team section and news page
